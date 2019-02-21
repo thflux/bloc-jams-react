@@ -33,6 +33,14 @@ class Album extends Component {
 			  this.audioElement.src = song.audioSrc;
 			  this.setState({ currentSong: song });
 			}
+		
+		handlePlayOnHover (song) {
+			this.setState({
+					showPlayOnHover: !this.state.showPlayOnHover,
+					isPlaying: !this.state.isPlaying
+				})
+				this.handleSongClick(song)
+		}	
 		 
 		handleSongClick(song) {
 			  const isSameSong = this.state.currentSong === song;
@@ -43,6 +51,7 @@ class Album extends Component {
 			       this.play();
 			     }	
 			}
+			
 		 		
 	
 	render() {
@@ -64,10 +73,17 @@ class Album extends Component {
 				</colgroup>  
 				<tbody>
 				{this.state.album.songs.map( (song, index) =>
-					<tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+					<tr className="song" key={index} 
+					onClick={() => this.handleSongClick(song)} 
+					onMouseOver={() => this.handlePlayOnHover(song)}
+					onMouseOut={() => this.handlePlayOnHover(song)}
+					>
 						  <td className="song-actions">
 							 <button>
-								<span className="song-number">{index+1}</span>
+								<span className="song-number">
+								{!this.state.showPlayOnHover ? index+1 : 
+								<span className="ion-play"></span>}
+								</span>
 								<span className="ion-play"></span>
 								<span className="ion-pause"></span>
 							</button>
