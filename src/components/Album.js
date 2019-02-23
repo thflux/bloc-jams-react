@@ -33,14 +33,7 @@ class Album extends Component {
 			  this.audioElement.src = song.audioSrc;
 			  this.setState({ currentSong: song });
 			}
-		
-		handlePlayOnHover (song) {
-			this.setState({
-					showPlayOnHover: !this.state.showPlayOnHover,
-					isPlaying: !this.state.isPlaying
-				})
-				this.handleSongClick(song)
-		}	
+			
 		 
 		handleSongClick(song) {
 			  const isSameSong = this.state.currentSong === song;
@@ -51,7 +44,29 @@ class Album extends Component {
 			       this.play();
 			     }	
 			}
+		
+		displayIcon(song, index) {
+				if(this.state.isPlaying !== true && this.state.hoveredSong === index ) {
+						return <span className="ion-md-play"></span>
+				} else if (this.state.isPlaying === true && this.state.currentSong === song) {
+						return <span className="ion-md-pause"></span>
+				} else if (this.state.isPlaying !== true && this.state.currentSong === song && this.state.hoveredSong === index) {
+						return <span className="ion-md-play"></span>
+				}
+				return index + 1
+			}
+		
+		hoverOn(index) {
+				this.setState({ hoveredSong: index });
+				console.log('hovered');
+
+			};
+
+		hoverOff() {
+				this.setState({ hoveredSong: false })
+			};
 			
+		
 		 		
 	
 	render() {
@@ -71,25 +86,19 @@ class Album extends Component {
 					<col id="song-title-column" />
 					<col id="song-duration-column" />
 				</colgroup>  
+				
 				<tbody>
 				{this.state.album.songs.map( (song, index) =>
-					<tr className="song" key={index} 
+					<tr className="song" 
+					key={index} 
 					onClick={() => this.handleSongClick(song)} 
-					onMouseOver={() => this.handlePlayOnHover(song)}
-					onMouseOut={() => this.handlePlayOnHover(song)}
-					>
-						  <td className="song-actions">
-							 <button>
-								<span className="song-number">
-								{!this.state.showPlayOnHover ? index+1 : 
-								<span className="ion-play"></span>}
-								</span>
-								<span className="ion-play"></span>
-								<span className="ion-pause"></span>
-							</button>
-						  </td>
-						  <td className="song-title">{song.title}</td>
-						  <td className="song-duration">{song.duration}</td>
+					 onMouseEnter = {() => this.hoverOn(index)}
+						onMouseLeave = {() => this.hoverOff()}>
+					
+				<td key='number'   > {this.displayIcon(song, index)} </td>
+				<td key='title'    > {song.title} </td>
+				<td key='duration' > {song.duration} </td>		  
+					
 					</tr>
 				  )}
 				</tbody>
