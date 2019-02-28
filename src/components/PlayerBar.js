@@ -31,7 +31,7 @@ import React, { Component } from 'react';
 		</section>
 		
 		<section id="volume-control">
-			<div className="icon ion-md-volume-low"></div>
+			<div className="icon ion-md-volume-low">{this.props.currentVolume}</div>
 			<input 
 			type="range" 
 			className="seek-bar"
