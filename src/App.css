@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  }
+  
+.App-link{
+  font-style: fantasy;
 }
 
 .App-logo {
@@ -22,6 +26,78 @@
 .App-link {
   color: #61dafb;
 }
+
+
+
+
+h1 {
+  color: #E6E6FA;
+  font-family: fantasy;
+  font-size: 75px;
+  border: 2px hidden;
+}
+
+h2 {
+  color: #E6E6FA;
+  font-family: fantasy;
+  font-size: 40px;
+  
+}
+
+p{
+  color: #FDF5E6;
+  font-family: fantasy;
+  font-size: 25px;
+}
+body {
+  background-image: linear-gradient(to bottom, #B22222 0%, #4B0082 100%);
+  
+}
+
+
+.library{
+  flex-wrap: wrap;
+  font-family: fantasy;
+}
+
+div{
+  font-style: fantasy;
+  font-color: #FDF5E6 ;
+}
+
+.song-list {
+  font-style: fantasy;
+  font-color: #FDF5E6 ;
+}
+
+img {
+  display: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: auto;
+}
+
+.player-bar{
+  font-family: fantasy;
+  border: 5px groove;
+  border-radius:20px;
+  padding: 15px;
+  
+}
+
+#release-info {
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+#song-list {
+  font-family: fantasy;
+  text-align: auto;
+  color: 	#FFEFD5;
+}
+
 
 @keyframes App-logo-spin {
   from {

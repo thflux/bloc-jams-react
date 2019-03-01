@@ -185,7 +185,7 @@ class Album extends Component {
 				<td key='number'   > {this.displayIcon(song, index)} </td>
 				<td key='title'    > {song.title} </td>
 				<td>{this.formatTime(song.duration)}</td>
-				<td key='duration' > {song.duration} </td>
+				
 
 				</tr>
 			)}
