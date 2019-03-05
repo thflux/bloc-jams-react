@@ -27,20 +27,43 @@
   color: #61dafb;
 }
 
+ a[href]{ 
+  color: #E6E6FA;
+  font-family: fantasy;
+  font-size: 25px;
+  letter-spacing: 5px;
+  padding: 0px 10px;
+  border: 2px solid;
+  border-radius: 5px;
+  border-style: outset;
+  position: relative;
+  display: inline-block;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  
+  
+}
 
-
+a:hover { 
+background-image: linear-gradient(to bottom, #B22222 0%, #DB7093 100%);
+font-weight: thick;
+}
 
 h1 {
   color: #E6E6FA;
   font-family: fantasy;
-  font-size: 75px;
-  border: 2px hidden;
+  font-size: 85px;
+  text-shadow: 4px 2px #DB7093;
+  
 }
 
 h2 {
   color: #E6E6FA;
   font-family: fantasy;
-  font-size: 40px;
+  font-size: 45px;
+  text-shadow: 1px 2px #DB7093;
   
 }
 
@@ -48,6 +71,7 @@ p{
   color: #FDF5E6;
   font-family: fantasy;
   font-size: 25px;
+  font-weight: bold;
 }
 body {
   background-image: linear-gradient(to bottom, #B22222 0%, #4B0082 100%);
@@ -65,12 +89,8 @@ div{
   font-color: #FDF5E6 ;
 }
 
-.song-list {
-  font-style: fantasy;
-  font-color: #FDF5E6 ;
-}
 
-img {
+#album-art-cover{
   display: inherit;
   margin-left: auto;
   margin-right: auto;
@@ -81,22 +101,82 @@ img {
 
 .player-bar{
   font-family: fantasy;
-  border: 5px groove;
+  border: 3px inset;
+  border-color: #483D8B ;
   border-radius:20px;
-  padding: 15px;
+  padding: 20px;
+  height: 175px;
+  width: 600px;
+  position: relative;
+  left: 500px;
+}
+
+
+.current-time{
+  font-size: 20px;
+  position: relative;
+  right: 100px;
+  top: 30px;
+}
+
+.total-time{
+  font-size: 20px;
+  position: relative;
+  left: 100px;
+  bottom: 30px;
+}
+
+.ion-md-volume-low{
+  position: relative;
+  right: 100px;
+  top: 25px;
+  
+}
+
+.ion-md-volume-high{
+  position: relative;
+  left: 100px;
+  bottom: 25px;
   
 }
 
 #release-info {
   font-family: fantasy;
-  font-size: 20px;
+  font-size: 25px;
+  color: #F0F8FF;
+  text-shadow: 1px 2px #DDA0DD;
+  width: 300px;
+  left: 680px;
+  position: relative;
 }
 
 #song-list {
   font-family: fantasy;
-  text-align: auto;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
   color: 	#FFEFD5;
+  position: relative;
+  left: 750px;
+  cursor: pointer;
+  display: block;
 }
+
+tr {
+ border: 2px groove;
+  transition: 0.3s;
+}
+
+tr:hover {
+  background-color: #D8BFD8;
+  color: #C71585 ;
+  border: 2px groove;
+}
+
+  
+
+  
+  
 
 
 @keyframes App-logo-spin {

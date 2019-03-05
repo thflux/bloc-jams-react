@@ -34,7 +34,7 @@ import React, { Component } from 'react';
 			<div className="icon ion-md-volume-low">{this.props.currentVolume}</div>
 			<input 
 			type="range" 
-			className="seek-bar"
+			className="volume-bar"
 			value={(this.props.currentVolume)}
 			max="1"
 			min="0"
